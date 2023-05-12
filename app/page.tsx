@@ -1,9 +1,12 @@
-import Image from "next/image";
-
+import AboutSection from "@/components/AboutSection"
+import HeroSection from "@/components/HeroSection"
+import ProjectsSection from "@/components/ProjectsSection"
 export default function Home() {
   return (
-    <main className="w-full h-screen overflow-x-hidden overflow-y-scroll font-body bg-slate-900 text-cyan-500">
-      Font
+    <main className="flex flex-col items-center px-4 sm:px-6">
+      <HeroSection />
+      <AboutSection />
+      <ProjectsSection />
     </main>
-  );
+  )
 }
