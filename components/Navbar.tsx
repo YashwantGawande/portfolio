@@ -39,12 +39,11 @@ const Navbar = () => {
   }, []);
 
   if (!mounted) return null;
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <header className="fixed top-0 z-50 w-full px-4 mx-auto bg-white sm:px-20 dark:bg-stone-900">
-      <div className="justify-between lg:justify-around md:items-center md:flex">
+    <header className="fixed top-0 z-50 w-full px-4 mx-auto sm:px-20">
+      <div className="justify-between 2xl:justify-around md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link to="home">
