@@ -4,9 +4,9 @@ import HeroSection from "@/components/HeroSection"
 import ProjectsSection from "@/components/ProjectsSection"
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4 sm:px-6">
+    <main className="flex flex-col items-center">
       <Background/>
-      <HeroSection />
+      <HeroSection/>
       <AboutSection />
       <ProjectsSection />
     </main>
