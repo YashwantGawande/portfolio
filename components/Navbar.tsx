@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Link } from "react-scroll/modules";
 import { usePathname } from "next/navigation";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
-import Image from "next/image";
 import ThemeChanger from "./ThemeChanger";
 
 interface NavItem {
@@ -66,10 +65,10 @@ const Navbar = () => {
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  className={`flex w-full cursor-pointer items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-primary-purple to-secondary-pink group-hover:from-primary-purple group-hover:to-secondary-pink hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink dark:focus:ring-purple-800`}
+                  className={`flex w-full cursor-pointer items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-primary-purple to-secondary-pink group-hover:from-primary-purple group-hover:to-secondary-pink hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-secondary-pink dark:focus:ring-purple-800`}
                   onClick={() => setNavbar(!navbar)}
                 >
-                  <span className="w-full relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  <span className="w-full relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-stone-900 rounded-md group-hover:bg-opacity-0">
                     {item.label}
                   </span>
                 </Link>
