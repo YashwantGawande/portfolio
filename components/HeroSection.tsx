@@ -6,7 +6,10 @@ import { Link } from "react-scroll/modules";
 const HeroSection = () => {
   return (
     <div className="container px-8 mx-auto xl:px-0">
-      <section id="home" className="flex flex-col-reverse flex-wrap lg:flex-row">
+      <section
+        id="home"
+        className="flex flex-col-reverse flex-wrap lg:flex-row"
+      >
         <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
@@ -14,14 +17,14 @@ const HeroSection = () => {
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-800 lg:text-xl xl:text-2xl dark:text-gray-100">
               I&#39;m a{" "}
-              <span className="font-semibold text-primary-purple dark:text-secondary-pink">
-                Full-stack developer{" "}
-              </span>
-              focused on creating practical solutions that
-              improve people&#39;s lives. My approach is grounded in solving
-              real-world problems and building user-friendly software that&#39;s
-              both functional and simple. I stay up-to-date with the latest
-              technologies to ensure my work is cutting edge and meaningful.
+              <span className="font-black text-transparent animate-text bg-gradient-to-r from-primary-purple via-secondary-pink to-purple-800 bg-clip-text">
+                Full-Stack Developer
+              </span>{" "}
+              focused on creating practical solutions that improve people&#39;s
+              lives. My approach is grounded in solving real-world problems and
+              building user-friendly software that&#39;s both functional and
+              simple. I stay up-to-date with the latest technologies to ensure
+              my work is cutting edge and meaningful.
             </p>
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
               <Link
