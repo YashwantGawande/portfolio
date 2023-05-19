@@ -57,9 +57,14 @@ const SKILL_ITEMS: Array<SkillItem> = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="container px-8 mx-auto xl:px-0">
-      <h1 className="text-4xl font-bold text-center xl:text-6xl">Skills</h1>
-      <div className="flex flex-wrap justify-center gap-5 pt-4 pb-12 md:pt-16">
+    <section
+      id="about"
+      className="container p-4 mx-auto mt-4 bg-black rounded-lg lg:p-8 xl:px-0 bg-opacity-10"
+    >
+      <h1 className="p-2 mb-4 text-2xl font-bold text-center lg:p-4 xl:text-4xl">
+        Skills
+      </h1>
+      <div className="flex flex-wrap justify-center gap-5 pt-4 ">
         {SKILL_ITEMS.map((item, id) => {
           return (
             <div
