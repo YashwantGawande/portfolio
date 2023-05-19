@@ -2,10 +2,12 @@
 import React from "react";
 import Image from "next/image";
 import { Link } from "react-scroll/modules";
+import { Particles } from "./Particle";
 
 const HeroSection = () => {
   return (
     <div className="container px-8 mx-auto xl:px-0">
+      <Particles className="absolute inset-0 -z-10" color={"#"} />
       <section
         id="home"
         className="flex flex-col-reverse flex-wrap lg:flex-row"
