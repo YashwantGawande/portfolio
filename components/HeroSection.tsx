@@ -7,7 +7,7 @@ import { Particles } from "./Particle";
 const HeroSection = () => {
   return (
     <div className="container px-8 mx-auto xl:px-0">
-      <Particles className="absolute inset-0 -z-10" color={"#"} />
+      <Particles className="absolute inset-0 -z-10" color={"#8642e3"} quantity={100}/>
       <section
         id="home"
         className="flex flex-col-reverse flex-wrap lg:flex-row"
@@ -38,6 +38,7 @@ const HeroSection = () => {
                 duration={500}
                 className="py-3 mb-2 mr-2 text-sm font-medium text-center text-white rounded-lg shadow-lg cursor-pointer bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 px-7"
               >
+                {/* {"<Code />"} */}
                 Projects
               </Link>
               <a
