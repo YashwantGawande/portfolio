@@ -23,10 +23,6 @@ module.exports = {
           },
         },
       },
-      fontFamily: {
-        body: ["var(--font-inter)"],
-        title: ["var(--font-montserrat)"],
-      },
       colors: {
         "primary-purple": "#8642e3",
         "secondary-pink": "#cf98fe",
