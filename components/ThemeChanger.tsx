@@ -14,7 +14,7 @@ const ThemeChanger = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center w-full md:w-auto">
       {currentTheme === "dark" ? (
         <button
           onClick={() => setTheme("light")}
