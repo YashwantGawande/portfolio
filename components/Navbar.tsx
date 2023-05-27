@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-scroll/modules";
 import { usePathname } from "next/navigation";
@@ -17,6 +17,10 @@ const NAV_ITEMS: Array<NavItem> = [
     page: "home",
   },
   {
+    label: "Skills",
+    page: "skills",
+  },
+  {
     label: "Projects",
     page: "projects",
   },
@@ -27,16 +31,34 @@ const NAV_ITEMS: Array<NavItem> = [
 ];
 
 const Navbar = () => {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   const [navbar, setNavbar] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isTop = window.scrollY === 0;
+      setScrolled(!isTop);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="w-full">
-      <nav className="container px-8 mx-auto md:flex md:items-center xl:px-0">
+    <nav
+      className={`fixed z-10 w-full ${
+        scrolled
+          ? "bg-white/50 dark:bg-stone-900/50 backdrop-blur-md drop-shadow-lg"
+          : "bg-transparent"
+      } transition-colors duration-300`}
+    >
+      <div className="container px-8 mx-auto md:flex md:items-center xl:px-0 font-">
         <div className="flex items-center justify-between w-full py-3 md:py-5 md:block">
           <Link to="home">
             <div className="container flex items-center space-x-2 cursor-pointer">
-              <h2 className="text-2xl font-bold">Yash</h2>
+              <h2 className="text-3xl font-extrabold">Yash</h2>
             </div>
           </Link>
           <div className="md:hidden">
@@ -50,11 +72,11 @@ const Navbar = () => {
         </div>
 
         <div
-          className={`md:flex md:pb-0 md:mt-0 absolute md:static w-[87%] ${
+          className={`md:flex absolute md:static shadow-[0px_20px_20px_10px_#00000024] md:shadow-none  w-1/3 h-screen md:w-auto md:h-auto top-0 left-0 dark:bg-stone-900 md:dark:bg-transparent  bg-white md:bg-transparent ${
             navbar ? "flex" : "hidden"
           }`}
         >
-          <div className="items-center justify-center w-full p-5 space-y-8 bg-white bg-opacity-50 rounded-lg backdrop-blur-md drop-shadow-lg md:bg-transparent md:flex md:space-x-6 md:space-y-0">
+          <div className="flex flex-col items-center justify-center w-full p-5 space-y-8 md:flex-row md:space-x-6 md:space-y-0">
             {NAV_ITEMS.map((item, idx) => {
               return (
                 <Link
@@ -75,8 +97,8 @@ const Navbar = () => {
             <ThemeChanger />
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 
