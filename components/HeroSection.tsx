@@ -7,17 +7,22 @@ import { Particles } from "./Particle";
 const HeroSection = () => {
   return (
     <div className="container px-8 mx-auto xl:px-0">
-      <Particles className="absolute inset-0 -z-10" color={"#8642e3"} quantity={100}/>
+      <Particles
+        className="absolute inset-0 -z-10"
+        color={"#8642e3"}
+        quantity={100}
+      />
       <section
         id="home"
-        className="flex flex-col-reverse flex-wrap lg:flex-row"
+        className="flex flex-col-reverse justify-center h-screen lg:flex-row"
       >
         <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
-            <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
-              Hi, I&#39;m Yashwant Gawande!
+            <h1 className="text-4xl text-center font-source md:text-6xl lg:text-left">
+              Hi, I&#39;m Yash
             </h1>
-            <p className="py-5 text-xl leading-normal text-gray-800 lg:text-xl xl:text-2xl dark:text-gray-100">
+
+            <p className="py-5 text-gray-800 md:text-xl dark:text-gray-100 ">
               I&#39;m a{" "}
               <span className="font-black text-transparent animate-text bg-gradient-to-r from-primary-purple via-secondary-pink to-purple-800 bg-clip-text">
                 Full-Stack Developer
@@ -28,7 +33,7 @@ const HeroSection = () => {
               simple. I stay up-to-date with the latest technologies to ensure
               my work is cutting edge and meaningful.
             </p>
-            <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
+            <div className="flex items-center space-y-3 sm:space-x-4 sm:space-y-0">
               <Link
                 to="projects"
                 activeClass="active"
@@ -64,7 +69,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="self-center md:flex md:items-center md:justify-center w-full h-auto md:w-[70%] lg:w-1/2">
+        <div className="p-5 flex items-center justify-center self-center md:w-[80%] lg:w-[50%]">
           <Image
             src="/assets/hero-work.svg"
             width={616}
