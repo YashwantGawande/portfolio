@@ -27,6 +27,11 @@ module.exports = {
         "primary-purple": "#8642e3",
         "secondary-pink": "#cf98fe",
       },
+      fontFamily: {
+        raleway: ["var(--font-raleway)"],
+        open_sans: ["var(--font-open-sans)"],
+        source: ["var(--font-source)"],
+      },
     },
   },
   plugins: [],
