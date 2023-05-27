@@ -1,6 +1,8 @@
 "use client";
+import { Caveat, Roboto_Mono, Work_Sans } from "next/font/google";
 import Image from "next/image";
 import React from "react";
+import Tilt from "react-parallax-tilt";
 
 interface Projects {
   name: string;
@@ -58,11 +60,11 @@ const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      className="container grid justify-center grid-rows-1 mx-auto mt-4 bg-black rounded-lg lg:grid-cols-2 lg:p-8 xl:px-0 bg-opacity-10"
+      className="container grid justify-center grid-rows-1 mx-auto mt-4 rounded-lg bg-black/10 lg:grid-cols-2 lg:p-8 xl:px-0"
     >
       <div>
-        <div className="lg:sticky top-10">
-          <h1 className="p-2 my-4 text-2xl font-bold text-center lg:p-4 xl:text-4xl">
+        <div className="lg:sticky top-16">
+          <h1 className="p-2 my-4 text-4xl text-center font-source lg:p-4 md:text-6xl lg:text-8xl">
             Projects
           </h1>
           <div className="flex justify-center w-full h-auto">
@@ -77,17 +79,15 @@ const ProjectsSection: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="my-4 ">
+      <div className="my-4">
         {PROJECTS.map((item, id) => {
           return (
             <div
               key={id}
               className="relative p-4 m-5 text-center bg-white border border-gray-200 rounded-lg shadow z-1 hover:shadow-primary-purple/50 sm:p-8 dark:bg-stone-900/30 dark:border-gray-700"
             >
-              <div className="flex items-center gap-5 mb-5 text-3xl font-bold text-gray-900 dark:text-white">
-                {item.name}
-              </div>
-              <p className="mb-5 text-base text-gray-800 sm:text-lg dark:text-gray-100">
+              <div className="mb-5 text-3xl text-left font-source">{item.name}</div>
+              <p className="mb-5 text-left text-gray-800 dark:text-gray-100">
                 {item.desc}
               </p>
               <div className="flex flex-wrap">
@@ -95,7 +95,7 @@ const ProjectsSection: React.FC = () => {
                   return (
                     <span
                       key={id}
-                      className="dark:bg-primary-purple bg-secondary-pink font-medium border rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 "
+                      className="dark:bg-primary-purple bg-secondary-pink font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                     >
                       {tech}
                     </span>
