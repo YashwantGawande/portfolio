@@ -66,7 +66,7 @@ const ContactForm = () => {
         onSubmit={handleSubmit}
       >
         <Form>
-          <div className="mx-auto lg:w-1/2 md:w-2/3">
+          <div className="mx-auto">
             <div className="flex flex-wrap">
               <div className="w-1/2 p-2">
                 <div className="relative">
