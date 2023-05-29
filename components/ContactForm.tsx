@@ -70,12 +70,12 @@ const ContactForm = () => {
             <div className="flex flex-wrap">
               <div className="w-1/2 p-2">
                 <div className="relative">
-                  <label className="text-sm leading-7">Name</label>
+                  <label className="text-sm leading-7 md:text-lg">Name</label>
                   <Field
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full px-3 py-1 text-base leading-8 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none dark:bg-transparent focus:border-primary-purple focus:bg-white focus:ring-2 focus:ring-secondary-pink"
+                    className="w-full px-3 py-1 text-base leading-8 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none md:text-xl dark:bg-transparent focus:border-primary-purple focus:bg-white focus:ring-2 focus:ring-secondary-pink"
                   />
                   <ErrorMessage
                     name="name"
@@ -86,12 +86,12 @@ const ContactForm = () => {
               </div>
               <div className="w-1/2 p-2">
                 <div className="relative">
-                  <label className="text-sm leading-7">Email</label>
+                  <label className="text-sm leading-7 md:text-lg">Email</label>
                   <Field
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-3 py-1 text-base leading-8 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none dark:bg-transparent focus:border-primary-purple focus:bg-white focus:ring-2 focus:ring-secondary-pink"
+                    className="w-full px-3 py-1 text-base leading-8 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none md:text-xl dark:bg-transparent focus:border-primary-purple focus:bg-white focus:ring-2 focus:ring-secondary-pink"
                   />
                   <ErrorMessage
                     name="email"
@@ -102,12 +102,12 @@ const ContactForm = () => {
               </div>
               <div className="w-full p-2">
                 <div className="relative">
-                  <label className="text-sm leading-7">Message</label>
+                  <label className="text-sm leading-7 md:text-lg">Message</label>
                   <Field
                     id="message"
                     name="message"
                     as="textarea"
-                    className="w-full h-32 px-3 py-1 text-base leading-6 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none dark:bg-transparent focus:border-primary-purple focus:bg-white focus:ring-2 focus:ring-secondary-pink"
+                    className="w-full h-32 px-3 py-1 text-base leading-6 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none md:text-xl dark:bg-transparent focus:border-primary-purple focus:bg-white focus:ring-2 focus:ring-secondary-pink"
                   />
                   <ErrorMessage
                     name="message"
