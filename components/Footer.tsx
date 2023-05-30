@@ -25,13 +25,13 @@ const LINKS: Array<Links> = [
 
 const Footer = () => {
   return (
-    <footer className="font-sans">
-      <div className="container flex flex-col items-center px-5 py-8 mx-auto sm:flex-row">
-        <a className="flex items-center justify-center font-medium md:justify-start">
+    <footer className="font-sans border-t-2 bg-white/50 dark:bg-stone-900/50">
+      <div className="container flex items-center justify-between p-5 mx-auto">
+        <a className="font-medium">
           <span className="text-xl">Yash</span>
         </a>
 
-        <ul className="inline-flex justify-center gap-4 mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
+        <ul className="flex gap-4">
           {LINKS.map((item, id) => {
             return (
               <li key={id} className="flex items-center gap-1">
