@@ -4,10 +4,10 @@ import ContactForm from "./ContactForm";
 
 const AboutMeSection = () => {
   return (
-    <section id="about" className="container h-screen p-5 mt-4 rounded-lg">
+    <section id="about" className="container p-5 mt-4 rounded-lg">
       <div className="">
-        <div className="">
-          <h1 className="py-2 text-4xl text-center md:py-5 md:text-6xl font-source">
+        <div className="text-center">
+          <h1 className="py-5 text-4xl md:text-6xl font-source">
             Who&#39;s Yash?
           </h1>
           <p className="text-lg md:text-xl">
@@ -37,8 +37,9 @@ const AboutMeSection = () => {
             ideas to discuss. Let&#39;s create something amazing together!
           </p>
         </div>
-        <div className="flex flex-col justify-center my-3 md:my-8">
-          <h3 className="py-2 text-2xl text-center md:py-5 md:text-4xl">
+        <hr className="mt-10"/>
+        <div className="flex flex-col justify-center my-5">
+          <h3 className="py-5 text-2xl text-center md:text-4xl">
             Contact me
           </h3>
           <ContactForm />
