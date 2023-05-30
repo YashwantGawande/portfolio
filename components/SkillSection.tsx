@@ -64,52 +64,49 @@ const SKILL_ITEMS: Array<SkillItem> = [
 
 const SkillSection = () => {
   return (
-    <section
-      id="skills"
-      className="container flex flex-col p-5 mx-auto bg-black rounded-lg lg:h-screen lg:items-center lg:p-8 xl:px-0 bg-opacity-10 lg:flex-row"
-    >
-      <div className="lg:w-1/2">
-        <h1
-          className={`font-source p-2 my-4 text-center lg:p-4 text-4xl md:text-6xl lg:text-8xl`}
-        >
-          Skills
-        </h1>
-        <div className="flex justify-center w-full h-auto">
-          <Image
-            src="/assets/engineer.svg"
-            width={616}
-            height={617}
-            style={{ objectFit: "cover" }}
-            alt="Hero Illustration"
-            priority={false}
-          />
+    <section id="skills" className="container">
+      <h1 className="p-2 my-4 text-4xl text-center font-source lg:p-4 md:text-6xl lg:text-8xl">
+        Skills
+      </h1>
+      <div className="flex flex-col p-5 mx-auto lg:items-center lg:p-8 xl:px-0 lg:flex-row">
+        <div className="lg:w-1/2">
+          <div className="flex justify-center w-full h-auto">
+            <Image
+              src="/assets/engineer.svg"
+              width={616}
+              height={617}
+              style={{ objectFit: "cover" }}
+              alt="Hero Illustration"
+              priority={false}
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="flex flex-wrap items-center justify-center p-4 h-min lg:w-1/2">
-        {SKILL_ITEMS.map((item, id) => {
-          return (
-            <Tilt
-              className="p-4 text-base text-center bg-white border border-gray-200 shadow cursor-default xl:p-5 xl:text-lg parallax-effect-glare-scale hover:shadow-primary-purple/50 dark:bg-stone-900/30 dark:border-gray-700"
-              glareEnable={true}
-              glareMaxOpacity={0.8}
-              glareColor="#ffffff"
-              glarePosition="bottom"
-              // glareBorderRadius="8px"
-              key={id}
-            >
-              <div className="inner-element">
-                <div className="flex items-center gap-2 font-bold text-gray-900 dark:text-white">
-                  {item.icon}
-                  {item.skill}
-                </div>
-                {/* <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
+        <div className="flex flex-wrap items-center justify-center p-4 h-min lg:w-1/2">
+          {SKILL_ITEMS.map((item, id) => {
+            return (
+              <Tilt
+                className="p-4 text-base text-center bg-white border border-gray-200 shadow cursor-default xl:p-5 xl:text-lg parallax-effect-glare-scale hover:shadow-primary-purple/50 dark:bg-stone-900/30 dark:border-gray-700"
+                glareEnable={true}
+                glareMaxOpacity={0.8}
+                glareColor="#ffffff"
+                glarePosition="bottom"
+                // glareBorderRadius="8px"
+                key={id}
+              >
+                <div className="inner-element">
+                  <div className="flex items-center gap-2 font-bold text-gray-900 dark:text-white">
+                    {item.icon}
+                    {item.skill}
+                  </div>
+                  {/* <p className="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
               {item.desc}
             </p> */}
-              </div>
-            </Tilt>
-          );
-        })}
+                </div>
+              </Tilt>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
