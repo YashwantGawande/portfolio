@@ -36,7 +36,9 @@ const Footer = () => {
             return (
               <li key={id} className="flex items-center gap-1">
                 <a href={item.href} target="_blank" rel="noopener">
-                  <span>{item.icon}</span>
+                  <span className="transition-colors duration-300  hover:text-primary-purple hover:dark:text-secondary-pink">
+                    {item.icon}
+                  </span>
                   {/* {item.name} */}
                 </a>
               </li>
