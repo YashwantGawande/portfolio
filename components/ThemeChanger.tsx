@@ -1,6 +1,7 @@
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 import { RiMoonFill, RiSunLine } from "react-icons/ri";
+import { motion } from "framer-motion";
 
 const ThemeChanger = () => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -14,7 +15,16 @@ const ThemeChanger = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <div className="flex items-center w-full md:w-auto">
+    <motion.div
+      initial={{ opacity: 0, y: -25 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+        delay: 0.8,
+      }}
+      className="flex items-center justify-center w-full md:w-auto"
+    >
       {currentTheme === "dark" ? (
         <button
           onClick={() => setTheme("light")}
@@ -23,7 +33,7 @@ const ThemeChanger = () => {
           {" "}
           <span className="sr-only">Light Mode</span>
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-stone-900 rounded-md group-hover:bg-opacity-0">
-            <RiSunLine size={22}/>
+            <RiSunLine size={22} />
           </span>
           {/* <Image src="/assets/sun.svg" alt="light-mode" height={25} width={25} /> */}
         </button>
@@ -35,12 +45,12 @@ const ThemeChanger = () => {
           {" "}
           <span className="sr-only">Dark Mode</span>
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-stone-900 rounded-md group-hover:bg-opacity-0">
-            <RiMoonFill size={22}/>
+            <RiMoonFill size={22} />
           </span>
           {/* <Image src="/assets/moon.svg" alt="dark-mode" height={25} width={25} /> */}
         </button>
       )}
-    </div>
+    </motion.div>
   );
 };
 
