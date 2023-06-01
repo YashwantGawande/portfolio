@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import {
   IoLogoHtml5,
   IoLogoCss3,
@@ -64,11 +64,6 @@ const SKILL_ITEMS: Array<SkillItem> = [
 ];
 
 const SkillSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  useEffect(() => {
-    console.log("Element is in view: ", isInView);
-  }, [isInView]);
   return (
     <section id="skills" className="container">
       <motion.h1
