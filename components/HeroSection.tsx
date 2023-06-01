@@ -3,26 +3,42 @@ import React from "react";
 import Image from "next/image";
 import { Link } from "react-scroll/modules";
 import { Particles } from "./Particle";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <div className="container px-8 mx-auto xl:px-0">
+    <section id="home" className="container mx-auto xl:px-0">
       <Particles
         className="absolute inset-0 -z-10"
         color={"#8642e3"}
         quantity={100}
       />
-      <section
-        id="home"
-        className="flex flex-col-reverse justify-center h-screen lg:flex-row"
-      >
+      <div className="flex flex-col-reverse justify-center h-screen lg:flex-row">
         <div className="flex items-center justify-center w-full lg:w-1/2">
-          <div className="max-w-2xl mb-8">
-            <h1 className="text-4xl text-center font-source md:text-6xl lg:text-left">
+          <div className="max-w-2xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+                delay: 0.6,
+              }}
+              className="text-4xl text-center font-source md:text-6xl lg:text-left"
+            >
               Hi, I&#39;m Yash
-            </h1>
+            </motion.h1>
 
-            <p className="py-5 text-gray-800 md:text-xl dark:text-gray-100 ">
+            <motion.p
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+                delay: 0.75,
+              }}
+              className="py-5 text-gray-800 md:text-xl dark:text-gray-100 "
+            >
               I&#39;m a{" "}
               <span className="font-black text-transparent animate-text bg-gradient-to-r from-primary-purple via-secondary-pink to-purple-800 bg-clip-text">
                 Full-Stack Developer
@@ -32,21 +48,38 @@ const HeroSection = () => {
               building user-friendly software that&#39;s both functional and
               simple. I stay up-to-date with the latest technologies to ensure
               my work is cutting edge and meaningful.
-            </p>
+            </motion.p>
             <div className="flex items-center gap-2">
-              <Link
-                to="projects"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={500}
-                className="py-3 mb-2 mr-2 text-sm font-medium text-center text-white rounded-lg shadow-lg cursor-pointer bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 px-7"
+              <motion.button
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  delay: 0.9,
+                }}
               >
-                {/* {"<Code />"} */}
-                Projects
-              </Link>
-              <a
+                <Link
+                  to="projects"
+                  activeClass="active"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className="py-3 mb-2 mr-2 text-sm font-medium text-center text-white rounded-lg shadow-lg cursor-pointer bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 px-7"
+                >
+                  {/* {"<Code />"} */}
+                  Projects
+                </Link>
+              </motion.button>
+              <motion.a
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  delay: 1.15,
+                }}
                 href="https://github.com/YashwantGawande"
                 target="_blank"
                 rel="noopener"
@@ -66,11 +99,20 @@ const HeroSection = () => {
                 </svg>
                 <span className="text-sm"> View on Github</span>
                 {/* <span>Github</span> */}
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>
-        <div className="p-5 flex items-center justify-center self-center md:w-[80%] lg:w-[50%]">
+        <motion.div
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+            delay: 0.6,
+          }}
+          className="p-5 flex items-center justify-center self-center md:w-[80%] lg:w-[50%]"
+        >
           <Image
             src="/assets/hero-work.svg"
             width={616}
@@ -79,9 +121,9 @@ const HeroSection = () => {
             alt="Hero Illustration"
             priority={false}
           />
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
