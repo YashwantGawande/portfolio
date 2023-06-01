@@ -5,6 +5,7 @@ import { Link } from "react-scroll/modules";
 import { usePathname } from "next/navigation";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import ThemeChanger from "./ThemeChanger";
+import { motion } from "framer-motion";
 
 interface NavItem {
   label: string;
@@ -58,7 +59,18 @@ const Navbar = () => {
         <div className="flex items-center justify-between w-full py-3 md:py-5 md:block">
           <Link to="home">
             <div className="container flex items-center space-x-2 cursor-pointer">
-              <h2 className="text-3xl font-extrabold">Yash</h2>
+              <motion.h2
+                initial={{ opacity: 0, x: -5 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  delay: 0.3,
+                }}
+                className="text-3xl font-extrabold"
+              >
+                Yash
+              </motion.h2>
             </div>
           </Link>
           <div className="md:hidden">
@@ -79,19 +91,29 @@ const Navbar = () => {
           <div className="flex flex-col items-center justify-center w-full p-5 space-y-8 md:flex-row md:space-x-6 md:space-y-0">
             {NAV_ITEMS.map((item, idx) => {
               return (
-                <Link
+                <motion.button
                   key={idx}
-                  to={item.page}
-                  activeClass="active"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  className={`w-full flex cursor-pointer items-center justify-start md:justify-center bg-clip-text font-semibold hover:text-transparent bg-gradient-to-r from-primary-purple to-secondary-pink`}
-                  onClick={() => setNavbar(!navbar)}
+                  initial={{ opacity: 0, y: -25 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeInOut",
+                    delay: 0.3 + idx * 0.1,
+                  }}
                 >
-                  {item.label}
-                </Link>
+                  <Link
+                    to={item.page}
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    className={`w-full flex cursor-pointer items-center justify-start md:justify-center bg-clip-text font-semibold hover:text-transparent bg-gradient-to-r from-primary-purple to-secondary-pink`}
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.button>
               );
             })}
             <ThemeChanger />
