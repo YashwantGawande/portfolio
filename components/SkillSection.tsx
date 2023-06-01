@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   IoLogoHtml5,
   IoLogoCss3,
@@ -18,6 +18,7 @@ import {
 import { TbBrandNextjs } from "react-icons/tb";
 import Tilt from "react-parallax-tilt";
 import "@/styles/ParallaxEffectGlareScale.css";
+import { motion, useInView } from "framer-motion";
 
 interface SkillItem {
   skill: string;
@@ -63,14 +64,39 @@ const SKILL_ITEMS: Array<SkillItem> = [
 ];
 
 const SkillSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+  }, [isInView]);
   return (
     <section id="skills" className="container">
-      <h1 className="p-2 my-4 text-4xl text-center font-source lg:p-4 md:text-6xl lg:text-8xl">
+      <motion.h1
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        variants={{
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 100 },
+        }}
+        className="p-2 my-4 text-4xl text-center font-source lg:p-4 md:text-6xl lg:text-8xl"
+      >
         Skills
-      </h1>
+      </motion.h1>
       <div className="flex flex-col p-5 mx-auto lg:items-center lg:p-8 xl:px-0 lg:flex-row">
         <div className="lg:w-1/2">
-          <div className="flex justify-center w-full h-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            variants={{
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 300 },
+            }}
+            className="flex justify-center w-full h-auto"
+          >
             <Image
               src="/assets/engineer.svg"
               width={616}
@@ -79,10 +105,20 @@ const SkillSection = () => {
               alt="Hero Illustration"
               priority={false}
             />
-          </div>
+          </motion.div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center p-4 h-min lg:w-1/2">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 100 },
+          }}
+          className="flex flex-wrap items-center justify-center p-4 h-min lg:w-1/2"
+        >
           {SKILL_ITEMS.map((item, id) => {
             return (
               <Tilt
@@ -106,7 +142,7 @@ const SkillSection = () => {
               </Tilt>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
